@@ -43,6 +43,15 @@ fi
 # Inject tags after example tags.
 sed -i "s/^#   - role:database$/#   - role:database\n$TAGS/" $DATADOG_CONF
 
+# Enable Logging
+if [ "$DD_LOGGING_ENABLED" == "true" ]; then
+    sed -i "s/^# logs_enabled: false/ logs_enabled: true/" $DATADOG_CONF
+    if [ "$DD_JSON_LOGGING" == "true"]; then
+        sed -i "s/^# log_format_json: no/ log_format_json: yes/" $DATADOG_CONF
+    fi
+fi
+
+
 # For a list of env vars to override datadog.yaml, see:
 # https://github.com/DataDog/datadog-agent/blob/master/pkg/config/config.go#L145
 
