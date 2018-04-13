@@ -49,7 +49,7 @@ In addition to the environment variables shown above, there are a number of othe
 | `DD_APM_ENABLED` | *Optional.* The Datadog Trace Agent (APM) is run by default. Set this to `false` to disable the Trace Agent. |
 | `DD_AGENT_VERSION` | *Optional.* By default, the buildpack installs the latest version of the Datadog Agent available in the package repository. Use this variable to install older versions of the Datadog Agent (note that not all versions of the Agent may be available). |
 | `DD_SERVICE_ENV` | *Optional.* The Datadog Agent automatically tries to identify your environment by searching for a tag in the form `env:<environment name>`. For more information, see the [Datadog Tracing environments page](https://docs.datadoghq.com/tracing/environments/). |
-| `DD_LOGGING_ENABLED` | *Optional.*  Set to "true" to enable DataDog Log Collection|
+| `DD_LOGGING_ENABLED` | *Optional.*  Set to "true" to enable DataDog Log Collection. Requires a `.datadog.yml` file in the root of your application. See <https://docs.datadoghq.com/logs/>|
 | `DD_JSON_LOGGING` | *Optional.* Set this to "true" for logs to send as JSON format. This does nothing unless `DD_LOGGING_ENABLED` is set to "true"
 
 For additional documentation, refer to the [Datadog Heroku buildpack documentation](https://docs.datadoghq.com/agent/basic_agent_usage/heroku/) and the [Datadog Agent documentation](https://docs.datadoghq.com/agent/).
